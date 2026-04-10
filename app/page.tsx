@@ -39,7 +39,7 @@ export default function Home() {
         </h1>
 
         <p className="text-[#776B5A] text-base md:text-lg leading-relaxed max-w-[520px]">
-          Abide Media Group is the company behind Rundeck and CreatorLink — practical software built for the way real businesses actually operate.
+          Abide Media Group is the company behind Rundeck, Rundeck Trades, VenueDeck, and CreatorLink — practical software built for the way real businesses actually operate.
         </p>
       </section>
 
@@ -86,6 +86,56 @@ export default function Home() {
               </svg>
             </div>
           </a>
+
+          {/* Rundeck Trades */}
+          <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#1A2332] flex items-center justify-center font-bold text-sm text-[#D4870A]">
+                    T
+                  </div>
+                  <span className="font-bold text-[#1A1A2E]">Rundeck Trades</span>
+                </div>
+                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#888070] bg-[#E2DDD6] px-2.5 py-1 rounded-full">
+                  Coming Soon
+                </span>
+              </div>
+
+              <p className="text-[#998F80] text-sm leading-relaxed mb-8">
+                Field service management for Australian trades. Route optimisation, job scheduling, dispatch, invoicing, and a technician mobile app — built for plumbers, electricians, cleaners, mechanics, and any trade that works on the go.
+              </p>
+            </div>
+
+            <div className="text-sm font-semibold text-[#BBB0A0]">
+              rundecktrades.com.au
+            </div>
+          </div>
+
+          {/* VenueDeck */}
+          <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#1E3A2F] flex items-center justify-center font-bold text-sm text-[#C9A96E]">
+                    V
+                  </div>
+                  <span className="font-bold text-[#1A1A2E]">VenueDeck</span>
+                </div>
+                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#888070] bg-[#E2DDD6] px-2.5 py-1 rounded-full">
+                  Coming Soon
+                </span>
+              </div>
+
+              <p className="text-[#998F80] text-sm leading-relaxed mb-8">
+                The shared portal for Australian wedding venues and the couples they host. From first enquiry to final Banquet Event Order — one workspace that replaces spreadsheets, email chains, and manual BEO forms.
+              </p>
+            </div>
+
+            <div className="text-sm font-semibold text-[#BBB0A0]">
+              venuedeck.com.au
+            </div>
+          </div>
 
           {/* CreatorLink */}
           <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
