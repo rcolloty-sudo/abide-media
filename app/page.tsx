@@ -6,9 +6,17 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="px-6 md:px-14 py-5 flex items-center justify-between border-b border-[#E2DDD6]">
-        <span className="text-[1.1rem] font-bold tracking-tight text-[#1A1A2E]">
-          Abide Media Group
-        </span>
+        <div className="flex items-center gap-3">
+          {/* Logo mark */}
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="#1A1A2E" />
+            <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
+            <path d="M11.3 21.2L12.6 17.8H15.1L11.3 21.2Z" fill="white" opacity="0" />
+          </svg>
+          <span className="text-[1.05rem] font-bold tracking-tight text-[#1A1A2E]">
+            Abide Media Group
+          </span>
+        </div>
         <a
           href="mailto:hello@abidemediagroup.com.au"
           className="text-sm text-[#888070] hover:text-[#1A1A2E] transition-colors"
@@ -127,11 +135,25 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 md:px-14 py-8 border-t border-[#E2DDD6] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#AAA090]">
-        <span>© {year} Abide Media Group Pty Ltd. All rights reserved.</span>
-        <a href="mailto:hello@abidemediagroup.com.au" className="hover:text-[#1A1A2E] transition-colors">
-          hello@abidemediagroup.com.au
-        </a>
+      <footer className="px-6 md:px-14 py-8 border-t border-[#E2DDD6]">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#AAA090]">
+          <div className="flex items-center gap-2.5">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#1A1A2E" />
+              <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
+            </svg>
+            <span>© {year} Abide Media Group Pty Ltd. All rights reserved.</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a href="mailto:hello@abidemediagroup.com.au" className="hover:text-[#1A1A2E] transition-colors">
+              hello@abidemediagroup.com.au
+            </a>
+            <span className="text-[#D8D0C4] hidden sm:inline">·</span>
+            <a href="/privacy" className="hover:text-[#1A1A2E] transition-colors">Privacy Policy</a>
+            <span className="text-[#D8D0C4] hidden sm:inline">·</span>
+            <a href="/terms" className="hover:text-[#1A1A2E] transition-colors">Terms of Use</a>
+          </div>
+        </div>
       </footer>
 
     </main>
