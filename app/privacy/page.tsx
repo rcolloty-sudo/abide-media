@@ -27,7 +27,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">1. Who we are</h2>
-            <p>Abide Media Group Pty Ltd ("we", "us", "our") is an Australian software company. We operate Rundeck (<a href="https://rundeck.com.au" className="underline hover:text-[#1A1A2E]">rundeck.com.au</a>) and CreatorLink, as well as this website at abidemediagroup.com.au. This policy explains how we collect, use, and protect your personal information in accordance with the Australian Privacy Act 1988 and the Australian Privacy Principles (APPs).</p>
+            <p>Abide Media Group Pty Ltd (ABN 95 696 579 683) ("we", "us", "our") is an Australian software company. We operate Rundeck (<a href="https://rundeck.com.au" className="underline hover:text-[#1A1A2E]">rundeck.com.au</a>) and CreatorLink, as well as this website at abidemediagroup.com.au. This policy explains how we collect, use, and protect your personal information in accordance with the Australian Privacy Act 1988 and the Australian Privacy Principles (APPs).</p>
           </section>
 
           <section>

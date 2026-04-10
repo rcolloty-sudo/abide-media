@@ -27,7 +27,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">1. About these terms</h2>
-            <p>These terms govern your use of the Abide Media Group website (abidemediagroup.com.au) and the products operated by Abide Media Group Pty Ltd, including Rundeck and CreatorLink. By accessing any of these services you agree to these terms. Each product may also have its own terms that apply in addition to these.</p>
+            <p>These terms govern your use of the Abide Media Group website (ABN 95 696 579 683) (abidemediagroup.com.au) and the products operated by Abide Media Group Pty Ltd, including Rundeck and CreatorLink. By accessing any of these services you agree to these terms. Each product may also have its own terms that apply in addition to these.</p>
           </section>
 
           <section>

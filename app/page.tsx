@@ -142,7 +142,7 @@ export default function Home() {
               <rect width="32" height="32" rx="8" fill="#1A1A2E" />
               <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
             </svg>
-            <span>© {year} Abide Media Group Pty Ltd. All rights reserved.</span>
+            <span>© {year} Abide Media Group Pty Ltd. ABN 95 696 579 683. All rights reserved.</span>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href="mailto:hello@abidemediagroup.com.au" className="hover:text-[#1A1A2E] transition-colors">
