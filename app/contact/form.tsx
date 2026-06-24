@@ -52,11 +52,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-[var(--cream)] border border-[var(--border)] rounded-[20px] p-12 text-center">
-        <div className="w-16 h-16 rounded-full bg-[var(--gold-light)] flex items-center justify-center mx-auto mb-6">
-          <span className="text-[var(--gold)] text-[2rem]">✓</span>
+      <div className="bg-[var(--card)] border border-[var(--border)] rounded-[20px] p-12 text-center">
+        <div className="w-16 h-16 rounded-full bg-[var(--mint-soft)] flex items-center justify-center mx-auto mb-6">
+          <span className="text-[var(--pine)] text-[2rem]">✓</span>
         </div>
-        <h2 className="serif text-[2rem] text-[var(--ink)] leading-[1.1] mb-3">Message sent.</h2>
+        <h2 className="display text-[2rem] text-[var(--ink)] leading-[1.1] mb-3">Message sent.</h2>
         <p className="text-[var(--muted)] text-[15px] leading-[1.65] max-w-[400px] mx-auto">
           Thanks for reaching out — we&apos;ll be in touch within 2 business days.
         </p>
@@ -65,10 +65,10 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-[var(--cream)] border border-[var(--border)] rounded-[20px] p-8 md:p-10 space-y-6">
+    <form onSubmit={handleSubmit} className="bg-[var(--card)] border border-[var(--border)] rounded-[20px] p-8 md:p-10 space-y-6">
       <div>
         <p className="eyebrow mb-2">Send us a message</p>
-        <p className="serif text-[1.7rem] text-[var(--ink)] leading-[1.2]">
+        <p className="display text-[1.7rem] text-[var(--ink)] leading-[1.2]">
           Tell us a bit about what you need.
         </p>
       </div>
@@ -134,7 +134,7 @@ export function ContactForm() {
         <p className="text-[13px] text-[var(--muted)]">
           Or email us: <a href="mailto:hello@abidemediagroup.com.au" className="underline underline-offset-4 text-[var(--ink)]">hello@abidemediagroup.com.au</a>
         </p>
-        <button type="submit" disabled={loading} className="am-btn">
+        <button type="submit" disabled={loading} className="btn btn-primary">
           {loading ? "Sending..." : "Send message →"}
         </button>
       </div>

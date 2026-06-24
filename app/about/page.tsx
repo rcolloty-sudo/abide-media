@@ -1,75 +1,62 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Breeze } from "../components/Breeze";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Abide Media Group is an Australian software studio founded by Rhys Colloty. We build practical SaaS tools and design websites and apps for other businesses.",
+    "Abide Media Group is a small Australian software studio. We build focused, well-made tools and design websites and apps for businesses we believe in.",
   alternates: { canonical: "https://abidemediagroup.com.au/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
-      {/* ── Header ───────────────────────────────────────── */}
-      <section className="max-w-[1180px] mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-16">
-        <div className="flex items-center gap-3 mb-10">
-          <span className="rule" />
-          <span className="eyebrow">About Abide Media Group</span>
+      {/* ── Header (light, with breeze) ─────────────── */}
+      <section className="relative overflow-hidden pt-20 pb-20">
+        <Breeze />
+        <div className="relative z-[1] w-full max-w-[1180px] mx-auto px-7">
+          <span className="eyebrow">About us</span>
+          <h1
+            className="display mt-3"
+            style={{
+              fontWeight: 700,
+              fontSize: "clamp(2.7rem,6.4vw,5.1rem)",
+              lineHeight: 1.02,
+              letterSpacing: "-.025em",
+              maxWidth: 1000,
+            }}
+          >
+            Software that <span style={{ color: "var(--ember)" }}>earns its place</span>.
+          </h1>
+          <p className="mt-7 text-[1.18rem]" style={{ color: "var(--muted)", maxWidth: 620 }}>
+            We&apos;re a small Australian studio that makes focused, well-built tools — and helps other businesses make theirs.
+          </p>
         </div>
-        <h1 className="serif text-[clamp(2.6rem,6vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.02em] text-[var(--ink)] max-w-[1100px]">
-          Practical software, built by people who&apos;ve actually run businesses.
-        </h1>
       </section>
 
-      {/* ── Mission ──────────────────────────────────────── */}
-      <section className="border-y border-[var(--border-soft)] bg-[var(--paper)]">
-        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28">
+      {/* ── Story ─────────────────────────────────────── */}
+      <section className="py-[96px]" style={{ background: "var(--paper-2)" }}>
+        <div className="w-full max-w-[1180px] mx-auto px-7">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-4">
-              <p className="eyebrow mb-4">Our mission</p>
-              <p className="serif text-[1.8rem] leading-[1.2] text-[var(--ink)]">
-                Make the boring parts of running a business&nbsp;
-                <span className="italic text-[var(--gold)]">a lot less boring</span>.
+              <span className="eyebrow">The name</span>
+              <h2 className="display mt-3" style={{ fontWeight: 700, fontSize: "clamp(1.6rem,2.8vw,2.2rem)", lineHeight: 1.1, letterSpacing: "-.02em" }}>
+                Abide / əˈbaɪd /
+              </h2>
+              <p className="italic mt-2" style={{ color: "var(--pine)", fontWeight: 600 }}>verb</p>
+              <p className="mt-2" style={{ color: "var(--muted)" }}>
+                To remain. To endure. To do good work and stick around. Whatever we make, we make it to last.
               </p>
             </div>
-            <div className="md:col-span-8 space-y-6 text-[var(--ink)] text-[1.05rem] leading-[1.75]">
+            <div className="md:col-span-8 space-y-6 text-[1.06rem]" style={{ color: "var(--ink)" }}>
               <p>
-                Most business software is built by people who&apos;ve never run the kind of business they&apos;re selling to. The result: bloated tools that solve problems nobody really has, while the actual day-to-day grind goes ignored.
+                Abide Media Group exists because most business software is built by people who&apos;ve never run the kind of business they&apos;re selling to. The result: bloated tools that solve problems nobody really has, while the actual day-to-day grind goes ignored.
               </p>
-              <p className="text-[var(--muted)]">
-                Abide Media Group exists to fix that. We build tools we&apos;d want to use ourselves — clean, fast, and focused on the work that actually fills a manager&apos;s day. Rostering, daily checklists, cash counts, timesheets, the unglamorous stuff.
+              <p style={{ color: "var(--muted)" }}>
+                We build for the owner who&apos;s working the floor and the manager who needs an answer now — because that&apos;s who we&apos;ve been. Our products come out of running real businesses, not whiteboarding imaginary ones.
               </p>
-              <p className="text-[var(--muted)]">
-                We&apos;re also picky about the businesses we work with. If you&apos;re building something interesting and need a website or app to match — we&apos;d love to help with that too.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Founder / Story ──────────────────────────────── */}
-      <section className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5">
-            <div className="bg-[var(--ink)] text-[var(--cream)] rounded-[24px] p-10">
-              <p className="eyebrow text-[var(--gold-soft)] mb-4">Founder</p>
-              <p className="serif text-[2rem] leading-[1.1] mb-6">Rhys Colloty</p>
-              <p className="text-[var(--muted-soft)] text-[15px] leading-[1.7]">
-                Based in Queensland, Australia. Background in hospitality operations and product. Started Abide Media Group to build the software he wished existed when he was running venues.
-              </p>
-            </div>
-          </div>
-          <div className="md:col-span-7">
-            <p className="eyebrow mb-6">The story</p>
-            <div className="space-y-5 text-[var(--ink)] text-[1.05rem] leading-[1.75]">
-              <p>
-                Abide Media Group was founded in 2025 out of frustration with the existing landscape of workforce and operations software. After years running shift-based hospitality businesses, it was clear there was a gap: tools that were either too basic to be useful, or so bloated and expensive they made small operators feel locked out.
-              </p>
-              <p className="text-[var(--muted)]">
-                Our first product, <a href="https://shiftbreeze.com" target="_blank" rel="noopener noreferrer" className="text-[var(--ink)] underline underline-offset-4 decoration-[var(--gold)]">Shiftbreeze</a>, is a workforce and ops platform built specifically for Australian shift-based businesses — flat-rate pricing, no per-user fees, and the daily-ops features that most platforms still leave out.
-              </p>
-              <p className="text-[var(--muted)]">
+              <p style={{ color: "var(--muted)" }}>
                 The longer-term plan is a connected suite of practical business tools — and along the way, helping a small number of selected clients with custom website and app projects.
               </p>
             </div>
@@ -77,12 +64,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Principles ──────────────────────────────────── */}
-      <section className="border-t border-[var(--border-soft)] bg-[var(--cream-deep)]">
-        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28">
-          <div className="mb-14">
-            <p className="eyebrow mb-4">How we work</p>
-            <h2 className="serif text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.1] tracking-[-0.015em] text-[var(--ink)] max-w-[800px]">
+      {/* ── Principles ───────────────────────────────── */}
+      <section className="py-[96px]">
+        <div className="w-full max-w-[1180px] mx-auto px-7">
+          <div className="max-w-[680px] mb-[52px]">
+            <span className="eyebrow">How we work</span>
+            <h2 className="display mt-3" style={{ fontWeight: 700, fontSize: "clamp(2rem,3.7vw,3rem)", lineHeight: 1.06, letterSpacing: "-.02em" }}>
               A few things we care about.
             </h2>
           </div>
@@ -91,28 +78,51 @@ export default function AboutPage() {
             {[
               { n: "01", t: "Practical over polished", d: "Software should make the work easier. Pretty is nice. Useful is non-negotiable." },
               { n: "02", t: "Built in Australia", d: "We understand Australian award rates, payroll, and the realities of running a business here. No US-first defaults." },
-              { n: "03", t: "Flat pricing, no surprises", d: "Per-user pricing is a tax on growth. Our products are flat-rate. Customer growth shouldn't punish you." },
+              { n: "03", t: "Flat pricing, no surprises", d: "Per-user pricing is a tax on growth. Our products are flat-rate so customer growth doesn’t punish you." },
             ].map((p) => (
-              <div key={p.n} className="bg-[var(--cream)] border border-[var(--border)] rounded-[20px] p-9">
-                <p className="serif text-[3rem] text-[var(--gold)] leading-none mb-6">{p.n}</p>
-                <h3 className="serif text-[1.5rem] text-[var(--ink)] mb-3 leading-[1.2]">{p.t}</h3>
-                <p className="text-[var(--muted)] text-[14.5px] leading-[1.65]">{p.d}</p>
+              <div key={p.n} className="card p-9">
+                <span
+                  className="display block mb-5"
+                  style={{ fontWeight: 800, fontSize: "2.4rem", color: "var(--ember)", lineHeight: 1 }}
+                >
+                  {p.n}
+                </span>
+                <h3 className="display mb-2" style={{ fontWeight: 700, fontSize: "1.35rem", letterSpacing: "-.01em" }}>{p.t}</h3>
+                <p style={{ color: "var(--muted)", margin: 0 }}>{p.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28 text-center">
-        <h2 className="serif text-[clamp(2rem,4.5vw,3.8rem)] font-medium leading-[1.05] tracking-[-0.015em] text-[var(--ink)] max-w-[700px] mx-auto">
-          Want to work with us, or just say hi?
-        </h2>
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link href="/contact" className="am-btn">Get in touch</Link>
-          <Link href="/services" className="inline-flex items-center bg-transparent text-[var(--ink)] border border-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--cream)] transition-colors px-7 py-[14px] rounded-full text-[14.5px] font-semibold">
-            See our services
-          </Link>
+      {/* ── Dark quote section ───────────────────────── */}
+      <section className="py-[96px]" style={{ background: "var(--ink)", color: "var(--paper)" }}>
+        <div className="w-full max-w-[1180px] mx-auto px-7">
+          <div className="max-w-[820px]">
+            <span className="eyebrow" style={{ color: "var(--mint)" }}>Founder</span>
+            <h2
+              className="display mt-3"
+              style={{
+                fontWeight: 700,
+                fontSize: "clamp(2rem,4vw,3rem)",
+                lineHeight: 1.05,
+                letterSpacing: "-.02em",
+              }}
+            >
+              Rhys Colloty — building from Queensland.
+            </h2>
+            <p className="mt-6 text-[1.1rem]" style={{ color: "#C2D4CA" }}>
+              Background in hospitality operations and product. Started Abide Media Group to build the software he wished existed when he was running venues.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link href="/contact" className="btn btn-primary">
+                Get in touch <span className="arr" aria-hidden="true">→</span>
+              </Link>
+              <Link href="/services" className="btn btn-light">
+                See our services
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

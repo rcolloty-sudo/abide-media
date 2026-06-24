@@ -1,50 +1,70 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 const NAV_LINKS = [
-  { href: "/suite", label: "Our suite" },
-  { href: "/services", label: "Services" },
+  { href: "/suite", label: "Suite" },
+  { href: "/services", label: "Build with us" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-30 bg-[var(--cream)]/85 backdrop-blur-lg border-b border-[var(--border-soft)]">
-      <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-        <Link href="/" onClick={() => setOpen(false)} className="shrink-0">
+    <header
+      className="sticky top-0 z-50"
+      style={{
+        background: scrolled ? "rgba(239,243,236,0.92)" : "rgba(239,243,236,0.78)",
+        backdropFilter: "saturate(160%) blur(14px)",
+        WebkitBackdropFilter: "saturate(160%) blur(14px)",
+        borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
+        transition: "border-color .3s ease, background .3s ease",
+      }}
+    >
+      <div className="w-full max-w-[1180px] mx-auto px-7 flex items-center justify-between h-[72px]">
+        <Link href="/" onClick={() => setOpen(false)} className="shrink-0" aria-label="Abide Media Group home">
           <Logo />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-[34px]" aria-label="Primary">
           {NAV_LINKS.map((l) => {
             const active = pathname === l.href || pathname?.startsWith(l.href + "/");
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`text-[14.5px] font-medium tracking-tight ${
-                  active ? "text-[var(--ink)]" : "text-[var(--muted)] hover:text-[var(--ink)]"
-                } transition-colors`}
+                className="font-medium text-[0.97rem] transition-colors"
+                style={{ color: active ? "var(--ink)" : "var(--muted)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = active ? "var(--ink)" : "var(--muted)")}
               >
                 {l.label}
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            className="text-[14px] font-semibold text-[var(--cream)] bg-[var(--ink)] hover:bg-[var(--gold)] transition-colors px-5 py-2.5 rounded-full"
-          >
-            Start a project
-          </Link>
         </nav>
+
+        <div className="hidden md:flex items-center gap-4">
+          <Link href="/contact" className="btn btn-ghost">
+            Contact
+          </Link>
+          <Link href="/contact" className="btn btn-primary">
+            Get in touch <span className="arr" aria-hidden="true">→</span>
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -52,16 +72,16 @@ export function Nav() {
           onClick={() => setOpen((o) => !o)}
           className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]"
         >
-          <span className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-transform ${open ? "rotate-45 translate-y-[6px]" : ""}`} />
-          <span className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-opacity ${open ? "opacity-0" : "opacity-100"}`} />
-          <span className={`block w-5 h-[1.5px] bg-[var(--ink)] transition-transform ${open ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+          <span className={`block w-5 h-[1.5px] transition-transform ${open ? "rotate-45 translate-y-[6px]" : ""}`} style={{ background: "var(--ink)" }} />
+          <span className={`block w-5 h-[1.5px] transition-opacity ${open ? "opacity-0" : "opacity-100"}`} style={{ background: "var(--ink)" }} />
+          <span className={`block w-5 h-[1.5px] transition-transform ${open ? "-rotate-45 -translate-y-[6px]" : ""}`} style={{ background: "var(--ink)" }} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-[var(--border-soft)] bg-[var(--cream)]">
-          <nav className="px-6 py-6 flex flex-col gap-1">
+        <div className="md:hidden border-t" style={{ borderColor: "var(--line)", background: "var(--paper)" }}>
+          <nav className="px-7 py-6 flex flex-col gap-1">
             {NAV_LINKS.map((l) => {
               const active = pathname === l.href || pathname?.startsWith(l.href + "/");
               return (
@@ -69,9 +89,8 @@ export function Nav() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className={`text-[17px] font-medium py-3 ${
-                    active ? "text-[var(--ink)]" : "text-[var(--muted)]"
-                  }`}
+                  className="text-[17px] font-medium py-3"
+                  style={{ color: active ? "var(--ink)" : "var(--muted)" }}
                 >
                   {l.label}
                 </Link>
@@ -80,9 +99,9 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center bg-[var(--ink)] text-[var(--cream)] font-semibold rounded-full py-3.5 text-[15px]"
+              className="btn btn-primary mt-4 justify-center"
             >
-              Start a project →
+              Get in touch <span className="arr" aria-hidden="true">→</span>
             </Link>
           </nav>
         </div>

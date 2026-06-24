@@ -1,27 +1,54 @@
 type Props = {
   size?: number;
   className?: string;
+  dark?: boolean;
 };
 
-export function Logo({ size = 28, className = "" }: Props) {
+export function Logo({ size = 34, className = "", dark = false }: Props) {
+  const wordmarkColor = dark ? "#FFFFFF" : "var(--ink)";
+  const bg = dark ? "rgba(255,255,255,0.08)" : "var(--ink)";
+
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 32 32"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="Abide Media Group"
+      <span
+        style={{
+          width: size,
+          height: size,
+          background: bg,
+          borderRadius: 10,
+          display: "grid",
+          placeItems: "center",
+          boxShadow: "inset 0 0 0 1px rgba(255,255,255,.06)",
+          flex: "0 0 auto",
+        }}
+        aria-hidden="true"
       >
-        <rect width="32" height="32" rx="7" fill="#1A1A2E" />
-        <path
-          d="M9.4 22.5L14.8 9.5h2.5l5.4 13h-2.4l-1.3-3.4h-5.9l-1.3 3.4H9.4Zm4.5-5.4h4.3L16 11.6l-2.1 5.5Z"
-          fill="#B68923"
-        />
-      </svg>
-      <span className="serif text-[1.3rem] font-semibold tracking-tight text-[var(--ink)] leading-none">
-        Abide<span className="text-[var(--gold)]">.</span>
+        <svg width={size * 0.6} height={size * 0.6} viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 9c3-2.5 6-2.5 9 0s6 2.5 9 0"
+            stroke="#8FD3B0"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M3 15c3-2.5 6-2.5 9 0s6 2.5 9 0"
+            stroke="#EA6A47"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+      <span
+        className="display"
+        style={{
+          color: wordmarkColor,
+          fontSize: "1.12rem",
+          fontWeight: 700,
+          letterSpacing: "-0.01em",
+          lineHeight: 1,
+        }}
+      >
+        Abide Media Group
       </span>
     </span>
   );

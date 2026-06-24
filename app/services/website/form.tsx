@@ -93,10 +93,10 @@ export function WebsiteForm() {
   if (status === "success") {
     return (
       <div className="text-center py-16">
-        <div className="w-16 h-16 rounded-full bg-[var(--gold-light)] flex items-center justify-center mx-auto mb-6">
-          <span className="text-[var(--gold)] text-[2rem]">✓</span>
+        <div className="w-16 h-16 rounded-full bg-[var(--mint-soft)] flex items-center justify-center mx-auto mb-6">
+          <span className="text-[var(--pine)] text-[2rem]">✓</span>
         </div>
-        <h2 className="serif text-[2.4rem] text-[var(--ink)] leading-[1.1] mb-4">Brief received.</h2>
+        <h2 className="display text-[2.4rem] text-[var(--ink)] leading-[1.1] mb-4">Brief received.</h2>
         <p className="text-[var(--muted)] text-[1.02rem] leading-[1.7] max-w-[460px] mx-auto">
           Thanks — we&apos;ll review your project details and get back to you within 2 business days with thoughts, a rough scope, and a quote.
         </p>
@@ -170,8 +170,8 @@ export function WebsiteForm() {
                 onClick={() => setForm({ ...form, projectType: p })}
                 className={`text-left px-4 py-3 rounded-[10px] border transition-colors text-[14.5px] ${
                   form.projectType === p
-                    ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--cream)]"
-                    : "border-[var(--border)] bg-[var(--paper)] text-[var(--ink)] hover:border-[var(--ink)]"
+                    ? "border-[var(--ink)] bg-[var(--ink)] text-white"
+                    : "border-[var(--border)] bg-[var(--paper-2)] text-[var(--ink)] hover:border-[var(--ink)]"
                 }`}
               >
                 {p}
@@ -225,8 +225,8 @@ export function WebsiteForm() {
                   onClick={() => toggleFeature(f)}
                   className={`px-4 py-2 rounded-full text-[13.5px] font-medium border transition-colors ${
                     on
-                      ? "bg-[var(--gold)] border-[var(--gold)] text-[var(--ink)]"
-                      : "bg-[var(--paper)] border-[var(--border)] text-[var(--ink)] hover:border-[var(--gold)]"
+                      ? "bg-[var(--ember)] border-[var(--ember)] text-white"
+                      : "bg-[var(--paper-2)] border-[var(--border)] text-[var(--ink)] hover:border-[var(--ember)]"
                   }`}
                 >
                   {f}
@@ -305,7 +305,7 @@ export function WebsiteForm() {
         <p className="text-[13px] text-[var(--muted)]">
           Or email us at <a href="mailto:hello@abidemediagroup.com.au" className="underline underline-offset-4 text-[var(--ink)]">hello@abidemediagroup.com.au</a>
         </p>
-        <button type="submit" disabled={loading} className="am-btn">
+        <button type="submit" disabled={loading} className="btn btn-primary">
           {loading ? "Sending..." : "Submit brief →"}
         </button>
       </div>

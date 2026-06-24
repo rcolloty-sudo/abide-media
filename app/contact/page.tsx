@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Breeze } from "../components/Breeze";
 import { ContactForm } from "./form";
 
 export const metadata: Metadata = {
@@ -11,65 +13,74 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="max-w-[1180px] mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-16">
-        <div className="flex items-center gap-3 mb-10">
-          <span className="rule" />
+      <section className="relative overflow-hidden pt-20 pb-12">
+        <Breeze />
+        <div className="relative z-[1] w-full max-w-[1180px] mx-auto px-7">
           <span className="eyebrow">Get in touch</span>
+          <h1
+            className="display mt-3"
+            style={{
+              fontWeight: 700,
+              fontSize: "clamp(2.7rem,6.4vw,5.1rem)",
+              lineHeight: 1.02,
+              letterSpacing: "-.025em",
+              maxWidth: 900,
+            }}
+          >
+            Let&apos;s <span style={{ color: "var(--ember)" }}>talk</span>.
+          </h1>
+          <p className="mt-7 text-[1.18rem]" style={{ color: "var(--muted)", maxWidth: 640 }}>
+            Got a project in mind, a question about our suite, or just want to say hi? Drop us a note and we&apos;ll get back to you within 2 business days.
+          </p>
         </div>
-        <h1 className="serif text-[clamp(2.6rem,6vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.02em] text-[var(--ink)] max-w-[1100px]">
-          Let&apos;s talk.
-        </h1>
-        <p className="mt-8 text-[var(--muted)] text-[1.05rem] leading-[1.75] max-w-[640px]">
-          Got a project in mind, a question about our suite, or just want to say hi? Drop us a note and we&apos;ll get back to you within 2 business days.
-        </p>
       </section>
 
-      <section className="border-t border-[var(--border-soft)] bg-[var(--paper)]">
-        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section className="pb-[96px]">
+        <div className="w-full max-w-[1180px] mx-auto px-7">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
 
-            {/* Left — Direct contact details */}
-            <div className="md:col-span-4 space-y-8">
+            {/* Left — direct contact */}
+            <div className="md:col-span-4 space-y-9">
               <div>
-                <p className="eyebrow mb-3">Email us directly</p>
+                <span className="eyebrow">Email us directly</span>
                 <a
                   href="mailto:hello@abidemediagroup.com.au"
-                  className="serif text-[1.6rem] text-[var(--ink)] hover:text-[var(--gold)] transition-colors break-all"
+                  className="display block mt-3 break-all transition-colors hover:text-[var(--ember)]"
+                  style={{ fontWeight: 700, fontSize: "1.45rem", lineHeight: 1.2, color: "var(--ink)" }}
                 >
                   hello@abidemediagroup.com.au
                 </a>
               </div>
 
               <div>
-                <p className="eyebrow mb-3">Based in</p>
-                <p className="serif text-[1.4rem] text-[var(--ink)] leading-[1.3]">
+                <span className="eyebrow">Based in</span>
+                <p className="display mt-3" style={{ fontWeight: 700, fontSize: "1.3rem", lineHeight: 1.3 }}>
                   Queensland, Australia
                 </p>
-                <p className="mt-1 text-[var(--muted)] text-[14px]">All times in AEST</p>
+                <p className="mt-1 text-[14px]" style={{ color: "var(--muted)" }}>All times in AEST</p>
               </div>
 
               <div>
-                <p className="eyebrow mb-3">Project briefs</p>
-                <div className="space-y-2 text-[14.5px]">
+                <span className="eyebrow">Project briefs</span>
+                <div className="mt-3 space-y-2.5 text-[14.5px]">
                   <p>
-                    <a href="/services/website" className="text-[var(--ink)] underline underline-offset-4 decoration-[var(--gold)] hover:text-[var(--gold)]">
+                    <Link href="/services/website" style={{ color: "var(--ink)", borderBottom: "1px solid var(--ember)", paddingBottom: 2 }}>
                       Website design brief
-                    </a>
+                    </Link>
                   </p>
                   <p>
-                    <a href="/services/app" className="text-[var(--ink)] underline underline-offset-4 decoration-[var(--gold)] hover:text-[var(--gold)]">
+                    <Link href="/services/app" style={{ color: "var(--ink)", borderBottom: "1px solid var(--ember)", paddingBottom: 2 }}>
                       App design brief
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right — General contact form */}
+            {/* Right — generic contact form */}
             <div className="md:col-span-8">
               <ContactForm />
             </div>
-
           </div>
         </div>
       </section>
