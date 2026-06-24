@@ -50,7 +50,7 @@ export default function ServicesPage() {
                   Modern, fast websites built on the latest stack.
                 </h2>
                 <p className="mt-6" style={{ color: "var(--muted)", fontSize: "1.04rem" }}>
-                  From marketing sites and product pages to full SaaS landing experiences. Built on Next.js, hosted on Vercel, designed with the kind of attention to detail you&apos;d expect from a product team.
+                  From marketing sites and product pages to full SaaS experiences. Built with the kind of attention to detail you&apos;d expect from a product team — fast, on-brand, and built to convert.
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-3">
@@ -64,12 +64,12 @@ export default function ServicesPage() {
                 <span className="eyebrow">What&apos;s included</span>
                 <ul className="mt-4 space-y-3">
                   {[
-                    "Design system & branding",
-                    "Custom responsive design",
-                    "SEO & performance optimisation",
-                    "CMS integration if needed",
-                    "Analytics & tracking setup",
-                    "Hosting on Vercel",
+                    "Design & branding",
+                    "Mobile-friendly responsive layouts",
+                    "Search-engine optimised",
+                    "Easy-to-edit content if needed",
+                    "Analytics & visitor tracking",
+                    "Fast, secure hosting included",
                     "Ongoing support available",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 items-start text-[14.5px] leading-[1.55]">
@@ -94,7 +94,7 @@ export default function ServicesPage() {
                   Native mobile apps for iOS &amp; Android.
                 </h2>
                 <p className="mt-6" style={{ color: "var(--muted)", fontSize: "1.04rem" }}>
-                  Built with React Native and Expo — one codebase, both stores. We&apos;ve already done this for Shiftbreeze, navigating both App Store and Google Play submissions. We can do it for you, too.
+                  One app, both stores. We design, build and ship — handling the App Store and Google Play submissions for you. We&apos;ve already done it for Shiftbreeze. We can do it for you, too.
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-3">
@@ -108,12 +108,12 @@ export default function ServicesPage() {
                 <span className="eyebrow">What&apos;s included</span>
                 <ul className="mt-4 space-y-3">
                   {[
-                    "iOS & Android from one codebase",
-                    "UI/UX design & prototyping",
-                    "Backend integration (Supabase, custom API)",
-                    "Push notifications setup",
-                    "App Store & Play Store submission",
-                    "Over-the-air updates (EAS)",
+                    "iOS &amp; Android — one app, both stores",
+                    "User experience design & prototyping",
+                    "Backend & data setup",
+                    "Push notifications",
+                    "App Store &amp; Play Store submission",
+                    "Effortless updates after launch",
                     "Ongoing maintenance available",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 items-start text-[14.5px] leading-[1.55]">

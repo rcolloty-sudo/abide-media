@@ -73,8 +73,8 @@ const COMPLEXITY = [
 ];
 
 const BACKEND = [
-  "We'll provide / already have one",
-  "Build us one (Supabase, custom API)",
+  "We already have one",
+  "Build us one from scratch",
   "Not sure yet — advise us",
 ];
 
