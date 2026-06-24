@@ -1,0 +1,60 @@
+import { NextResponse } from "next/server";
+import { sendEmail, buildEmail } from "../../lib/sendEmail";
+
+export const dynamic = "force-dynamic";
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const {
+      name, email, company,
+      platforms, appCategory, appStage, features, complexity, backend,
+      timeline, budget, inspiration, description,
+    } = body ?? {};
+
+    if (!name || !email || !description) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+    if (!isEmail(email)) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    const html = buildEmail({
+      title: "New app design brief",
+      subtitle: "abidemediagroup.com.au · /services/app",
+      rows: [
+        { label: "Name", value: name },
+        { label: "Email", value: email },
+        { label: "Business", value: company },
+        { label: "Platforms", value: platforms },
+        { label: "App category", value: appCategory },
+        { label: "Current stage", value: appStage },
+        { label: "Features required", value: features },
+        { label: "Complexity", value: complexity },
+        { label: "Backend", value: backend },
+        { label: "Timeline", value: timeline },
+        { label: "Budget", value: budget },
+        { label: "Inspiration", value: inspiration },
+      ],
+      description,
+    });
+
+    await sendEmail({
+      subject: `App brief — ${name}${company ? ` (${company})` : ""}`,
+      html,
+      replyTo: email,
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (err: any) {
+    console.error("App form error:", err);
+    return NextResponse.json(
+      { error: err.message || "Failed to send brief" },
+      { status: 500 }
+    );
+  }
+}
+
+function isEmail(s: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(s));
+}

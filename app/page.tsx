@@ -1,211 +1,197 @@
+import Link from "next/link";
+
 export default function Home() {
-  const year = new Date().getFullYear()
-
   return (
-    <main className="min-h-screen flex flex-col bg-[#F7F5F1] text-[#1A1A2E]">
-
-      {/* Nav */}
-      <nav className="px-6 md:px-14 py-5 flex items-center justify-between border-b border-[#E2DDD6]">
-        <div className="flex items-center gap-3">
-          {/* Logo mark */}
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="8" fill="#1A1A2E" />
-            <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
-            <path d="M11.3 21.2L12.6 17.8H15.1L11.3 21.2Z" fill="white" opacity="0" />
-          </svg>
-          <span className="text-[1.05rem] font-bold tracking-tight text-[#1A1A2E]">
-            Abide Media Group
-          </span>
-        </div>
-        <a
-          href="mailto:hello@abidemediagroup.com.au"
-          className="text-sm text-[#888070] hover:text-[#1A1A2E] transition-colors"
-        >
-          Get in touch
-        </a>
-      </nav>
-
-      {/* Hero */}
-      <section className="px-6 md:px-14 pt-20 pb-16 max-w-[1100px] mx-auto w-full">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-px w-10 bg-[#1A1A2E]" />
-          <span className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#888070]">
-            Australian Software Company
-          </span>
+    <>
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="max-w-[1180px] mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-24">
+        <div className="flex items-center gap-3 mb-10">
+          <span className="rule" />
+          <span className="eyebrow">An Australian software studio · est. 2025</span>
         </div>
 
-        <h1 className="text-[clamp(2.6rem,6vw,5.5rem)] font-bold leading-[1.05] tracking-tight text-[#1A1A2E] max-w-[760px] mb-8">
-          We build tools that help businesses run better.
+        <h1 className="serif text-[clamp(2.8rem,7vw,6.5rem)] font-medium leading-[0.98] tracking-[-0.02em] text-[var(--ink)] max-w-[1100px]">
+          We build software that helps&nbsp;
+          <span className="italic text-[var(--gold)]">real businesses</span> run better.
         </h1>
 
-        <p className="text-[#776B5A] text-base md:text-lg leading-relaxed max-w-[520px]">
-          Abide Media Group is the company behind Rundeck, Rundeck Trades, VenueDeck, and CreatorLink — practical software built for the way real businesses actually operate.
-        </p>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+          <p className="md:col-span-7 text-[var(--muted)] text-[1.05rem] leading-[1.7] max-w-[640px]">
+            Abide Media Group is a Queensland-based studio creating practical software for the way real businesses actually operate.
+            We build our own SaaS suite — starting with{" "}
+            <a href="https://shiftbreeze.com" target="_blank" rel="noopener noreferrer" className="text-[var(--ink)] underline underline-offset-4 decoration-[var(--gold)] decoration-[1.5px] hover:text-[var(--gold)] transition-colors">
+              Shiftbreeze
+            </a>
+            {" "}— and design custom websites and apps for other businesses too.
+          </p>
+
+          <div className="md:col-span-5 flex md:justify-end items-end">
+            <div className="flex flex-wrap gap-3">
+              <Link href="/suite" className="am-btn">
+                See our suite
+              </Link>
+              <Link href="/services" className="inline-flex items-center justify-center bg-transparent text-[var(--ink)] border border-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--cream)] transition-colors px-7 py-[14px] rounded-full text-[14.5px] font-semibold">
+                Design services
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Divider */}
-      <div className="border-t border-[#E2DDD6] mx-6 md:mx-14" />
+      {/* ── Suite preview ────────────────────────────────── */}
+      <section className="bg-[var(--paper)] border-y border-[var(--border-soft)]">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14 items-end">
+            <div className="md:col-span-7">
+              <p className="eyebrow mb-4">Our suite</p>
+              <h2 className="serif text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-[1.05] tracking-[-0.015em] text-[var(--ink)]">
+                Software we build, run, and use ourselves.
+              </h2>
+            </div>
+            <div className="md:col-span-5 md:text-right">
+              <Link href="/suite" className="am-btn-ghost">
+                See the full suite →
+              </Link>
+            </div>
+          </div>
 
-      {/* Products */}
-      <section className="px-6 md:px-14 py-16 max-w-[1100px] mx-auto w-full">
-        <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#888070] mb-10">
-          Our products
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-          {/* Rundeck */}
+          {/* Featured product card — Shiftbreeze */}
           <a
-            href="https://rundeck.com.au"
+            href="https://shiftbreeze.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-white p-8 hover:border-[#1A1A2E] transition-all duration-200"
+            className="block group bg-[var(--cream)] border border-[var(--border)] rounded-[24px] p-10 md:p-14 hover:border-[var(--gold)] transition-colors"
           >
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#1A2332] flex items-center justify-center text-white font-bold text-sm">
-                    R
-                  </div>
-                  <span className="font-bold text-[#1A1A2E]">Rundeck</span>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+              <div className="md:col-span-7">
+                <span className="tag tag-gold">Live · v1.0</span>
+                <h3 className="serif text-[clamp(2rem,4vw,3.2rem)] font-medium leading-[1.05] tracking-[-0.015em] text-[var(--ink)] mt-5">
+                  Shiftbreeze
+                </h3>
+                <p className="mt-5 text-[var(--muted)] text-[1.02rem] leading-[1.7] max-w-[520px]">
+                  Workforce management and daily operations for shift-based Australian businesses. Roster, timesheets, daily checklists, cash counts — one flat-rate platform.
+                </p>
+                <div className="mt-7 inline-flex items-center gap-2 text-[var(--ink)] font-semibold text-[14.5px] group-hover:text-[var(--gold)] transition-colors">
+                  shiftbreeze.com <span className="text-[var(--gold)]">↗</span>
                 </div>
-                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#2D9B6F] bg-[#2D9B6F]/10 px-2.5 py-1 rounded-full">
-                  Live
-                </span>
               </div>
 
-              <p className="text-[#776B5A] text-sm leading-relaxed mb-8">
-                Workforce management for hospitality and retail. Rosters, timesheets, leave requests, daily ops checklists, and a staff mobile app — all in one platform built for operators on the floor, not just the back office.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-[#1A1A2E] group-hover:gap-2.5 transition-all">
-              <span>rundeck.com.au</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M3 11L11 3M11 3H6M11 3V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <div className="md:col-span-5">
+                <div className="bg-[var(--ink)] rounded-[18px] p-8 text-[var(--cream)]">
+                  <p className="eyebrow text-[var(--gold-soft)] mb-3">Industries</p>
+                  <ul className="serif text-[1.55rem] leading-[1.45]">
+                    <li>Hospitality</li>
+                    <li className="italic opacity-90">Retail</li>
+                    <li>Healthcare</li>
+                    <li className="italic opacity-90">Childcare</li>
+                    <li className="opacity-80">+ more</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </a>
 
-          {/* Rundeck Trades */}
-          <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#1A2332] flex items-center justify-center font-bold text-sm text-[#D4870A]">
-                    T
-                  </div>
-                  <span className="font-bold text-[#1A1A2E]">Rundeck Trades</span>
+          {/* Coming soon teaser */}
+          <div className="mt-6 bg-[var(--cream-deep)] border border-dashed border-[var(--border)] rounded-[24px] p-8 md:p-10">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 justify-between">
+              <div className="flex items-center gap-5">
+                <div className="w-14 h-14 rounded-full bg-[var(--cream)] border border-[var(--border)] flex items-center justify-center">
+                  <span className="serif text-[1.6rem] text-[var(--muted)]">+</span>
                 </div>
-                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#888070] bg-[#E2DDD6] px-2.5 py-1 rounded-full">
-                  Coming Soon
-                </span>
+                <div>
+                  <p className="eyebrow mb-1">Coming soon</p>
+                  <p className="serif text-[1.45rem] text-[var(--ink)]">More products in development</p>
+                </div>
               </div>
-
-              <p className="text-[#998F80] text-sm leading-relaxed mb-8">
-                Field service management for Australian trades. Route optimisation, job scheduling, dispatch, invoicing, and a technician mobile app — built for plumbers, electricians, cleaners, mechanics, and any trade that works on the go.
+              <p className="text-[var(--muted)] text-[14.5px] max-w-[420px]">
+                We&apos;re building more tools across operations, finance, and team management. Want early access?{" "}
+                <Link href="/contact" className="text-[var(--ink)] underline underline-offset-4 decoration-[var(--gold)]">
+                  Get in touch
+                </Link>.
               </p>
             </div>
-
-            <div className="text-sm font-semibold text-[#BBB0A0]">
-              rundecktrades.com.au
-            </div>
           </div>
-
-          {/* VenueDeck */}
-          <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#1E3A2F] flex items-center justify-center font-bold text-sm text-[#C9A96E]">
-                    V
-                  </div>
-                  <span className="font-bold text-[#1A1A2E]">VenueDeck</span>
-                </div>
-                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#888070] bg-[#E2DDD6] px-2.5 py-1 rounded-full">
-                  Coming Soon
-                </span>
-              </div>
-
-              <p className="text-[#998F80] text-sm leading-relaxed mb-8">
-                The shared portal for Australian wedding venues and the couples they host. From first enquiry to final Banquet Event Order — one workspace that replaces spreadsheets, email chains, and manual BEO forms.
-              </p>
-            </div>
-
-            <div className="text-sm font-semibold text-[#BBB0A0]">
-              venuedeck.com.au
-            </div>
-          </div>
-
-          {/* CreatorLink */}
-          <div className="flex flex-col justify-between rounded-2xl border border-[#E2DDD6] bg-[#F7F5F1] p-8">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#1a1208] flex items-center justify-center font-bold text-sm text-[#faf8f4]">
-                    C
-                  </div>
-                  <span className="font-bold text-[#1A1A2E]">CreatorLink</span>
-                </div>
-                <span className="text-[0.65rem] font-bold uppercase tracking-widest text-[#888070] bg-[#E2DDD6] px-2.5 py-1 rounded-full">
-                  Coming Soon
-                </span>
-              </div>
-
-              <p className="text-[#998F80] text-sm leading-relaxed mb-8">
-                A marketplace connecting content creators with the brands that want to work with them. Streamlined outreach, deal management, and creator discovery — built for authentic partnerships.
-              </p>
-            </div>
-
-            <div className="text-sm font-semibold text-[#BBB0A0]">
-              creatorlink.com.au
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* About strip */}
-      <section className="border-t border-[#E2DDD6] bg-[#1A1A2E] px-6 md:px-14 py-14">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row md:items-center gap-8 md:gap-16">
-          <div className="md:w-1/2">
-            <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#555F80] mb-4">
-              About us
-            </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white leading-snug">
-              Software that earns its place in a busy business.
+      {/* ── Services preview ─────────────────────────────── */}
+      <section className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14 items-end">
+          <div className="md:col-span-7">
+            <p className="eyebrow mb-4">Design services</p>
+            <h2 className="serif text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-[1.05] tracking-[-0.015em] text-[var(--ink)]">
+              Building software for others, too.
             </h2>
           </div>
-          <div className="md:w-1/2">
-            <p className="text-[#8892A4] text-sm leading-relaxed">
-              We're a small Australian software company that builds focused, well-made products. We don't do feature bloat or enterprise pricing. We build for the owner who's working the floor and the manager who needs answers quickly — not the enterprise buyer in a boardroom.
-            </p>
+          <div className="md:col-span-5 md:text-right">
+            <Link href="/services" className="am-btn-ghost">
+              All services →
+            </Link>
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <Link
+            href="/services/website"
+            className="group block bg-[var(--paper)] border border-[var(--border)] rounded-[20px] p-9 hover:border-[var(--gold)] transition-colors"
+          >
+            <p className="eyebrow mb-6">01 / Website design</p>
+            <h3 className="serif text-[2rem] leading-[1.1] text-[var(--ink)] mb-4 max-w-[400px]">
+              Modern, fast, on-brand websites.
+            </h3>
+            <p className="text-[var(--muted)] text-[15px] leading-[1.65] max-w-[440px]">
+              From marketing sites to product pages. Built on Next.js, hosted on Vercel, optimised for speed and SEO.
+            </p>
+            <span className="mt-7 inline-flex items-center gap-2 text-[var(--ink)] font-semibold text-[14.5px] group-hover:text-[var(--gold)] transition-colors">
+              Start a website project →
+            </span>
+          </Link>
+
+          <Link
+            href="/services/app"
+            className="group block bg-[var(--paper)] border border-[var(--border)] rounded-[20px] p-9 hover:border-[var(--gold)] transition-colors"
+          >
+            <p className="eyebrow mb-6">02 / App design</p>
+            <h3 className="serif text-[2rem] leading-[1.1] text-[var(--ink)] mb-4 max-w-[400px]">
+              Native mobile apps for iOS &amp; Android.
+            </h3>
+            <p className="text-[var(--muted)] text-[15px] leading-[1.65] max-w-[440px]">
+              Built with React Native &amp; Expo. Launch on both stores from a single codebase. We&apos;ve done it for ourselves — we can do it for you.
+            </p>
+            <span className="mt-7 inline-flex items-center gap-2 text-[var(--ink)] font-semibold text-[14.5px] group-hover:text-[var(--gold)] transition-colors">
+              Start an app project →
+            </span>
+          </Link>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-6 md:px-14 py-8 border-t border-[#E2DDD6]">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-[#AAA090]">
-          <div className="flex items-center gap-2.5">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="8" fill="#1A1A2E" />
-              <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
-            </svg>
-            <span>© {year} Abide Media Group Pty Ltd. ABN 95 696 579 683. All rights reserved.</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a href="mailto:hello@abidemediagroup.com.au" className="hover:text-[#1A1A2E] transition-colors">
-              hello@abidemediagroup.com.au
-            </a>
-            <span className="text-[#D8D0C4] hidden sm:inline">·</span>
-            <a href="/privacy" className="hover:text-[#1A1A2E] transition-colors">Privacy Policy</a>
-            <span className="text-[#D8D0C4] hidden sm:inline">·</span>
-            <a href="/terms" className="hover:text-[#1A1A2E] transition-colors">Terms of Use</a>
+      {/* ── Closing CTA ──────────────────────────────────── */}
+      <section className="bg-[var(--ink)] text-[var(--cream)]">
+        <div className="max-w-[1180px] mx-auto px-6 md:px-12 py-20 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-8">
+              <p className="eyebrow text-[var(--gold-soft)] mb-4">Let&apos;s talk</p>
+              <h2 className="serif text-[clamp(2.2rem,5vw,4.5rem)] font-medium leading-[1.02] tracking-[-0.02em]">
+                Got a project in mind, or want to chat?
+              </h2>
+            </div>
+            <div className="md:col-span-4 md:text-right">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[var(--gold)] hover:bg-[var(--gold-soft)] transition-colors text-[var(--ink)] font-semibold px-7 py-4 rounded-full text-[14.5px]"
+              >
+                Get in touch →
+              </Link>
+              <p className="text-[var(--muted-soft)] text-[14px] mt-5">
+                Or email us:{" "}
+                <a href="mailto:hello@abidemediagroup.com.au" className="text-[var(--cream)] hover:text-[var(--gold)]">
+                  hello@abidemediagroup.com.au
+                </a>
+              </p>
+            </div>
           </div>
         </div>
-      </footer>
-
-    </main>
-  )
+      </section>
+    </>
+  );
 }
