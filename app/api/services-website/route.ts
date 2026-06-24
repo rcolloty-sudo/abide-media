@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const {
       name, email, company, websiteCurrent,
       projectType, pages, features, designStyle,
-      timeline, budget, inspiration, description,
+      timeline, inspiration, description,
     } = body ?? {};
 
     if (!name || !email || !description) {
@@ -32,7 +32,6 @@ export async function POST(req: Request) {
         { label: "Design style", value: designStyle },
         { label: "Features required", value: features },
         { label: "Timeline", value: timeline },
-        { label: "Budget", value: budget },
         { label: "Inspiration", value: inspiration },
       ],
       description,

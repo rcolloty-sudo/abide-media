@@ -9,10 +9,7 @@ type FormState = {
   appCategory: string;
   appStage: string;
   features: string[];
-  complexity: string;
-  backend: string;
   timeline: string;
-  budget: string;
   inspiration: string;
   description: string;
 };
@@ -25,10 +22,7 @@ const INITIAL: FormState = {
   appCategory: "",
   appStage: "",
   features: [],
-  complexity: "",
-  backend: "",
   timeline: "",
-  budget: "",
   inspiration: "",
   description: "",
 };
@@ -65,21 +59,7 @@ const FEATURE_OPTIONS = [
   "Calendar / scheduling",
 ];
 
-const COMPLEXITY = [
-  "Simple — a few core screens",
-  "Medium — multiple connected features",
-  "Complex — full SaaS with backend",
-  "Not sure",
-];
-
-const BACKEND = [
-  "We already have one",
-  "Build us one from scratch",
-  "Not sure yet — advise us",
-];
-
 const TIMELINES = ["ASAP", "Within 2 months", "Within 4 months", "Within 6 months", "Flexible"];
-const BUDGETS = ["Under $10k", "$10k–$25k", "$25k–$50k", "$50k+", "Not sure yet"];
 
 export function AppForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -224,42 +204,17 @@ export function AppForm() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="am-label">Complexity estimate</label>
-            <select value={form.complexity} onChange={(e) => setForm({ ...form, complexity: e.target.value })} className="am-input">
-              <option value="">Select...</option>
-              {COMPLEXITY.map((c) => <option key={c} value={c}>{c}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="am-label">Backend</label>
-            <select value={form.backend} onChange={(e) => setForm({ ...form, backend: e.target.value })} className="am-input">
-              <option value="">Select...</option>
-              {BACKEND.map((b) => <option key={b} value={b}>{b}</option>)}
-            </select>
-          </div>
-        </div>
       </fieldset>
 
-      {/* Timeline & budget */}
+      {/* Timeline */}
       <fieldset className="space-y-5">
-        <legend className="eyebrow mb-2">03 · Timeline &amp; budget</legend>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="am-label">Timeline</label>
-            <select value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} className="am-input">
-              <option value="">Select...</option>
-              {TIMELINES.map((t) => <option key={t} value={t}>{t}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="am-label">Budget (AUD)</label>
-            <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="am-input">
-              <option value="">Select...</option>
-              {BUDGETS.map((b) => <option key={b} value={b}>{b}</option>)}
-            </select>
-          </div>
+        <legend className="eyebrow mb-2">03 · Timeline</legend>
+        <div>
+          <label className="am-label">When do you need it?</label>
+          <select value={form.timeline} onChange={(e) => setForm({ ...form, timeline: e.target.value })} className="am-input">
+            <option value="">Select...</option>
+            {TIMELINES.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
         </div>
       </fieldset>
 

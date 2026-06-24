@@ -8,8 +8,8 @@ export async function POST(req: Request) {
     const body = await req.json();
     const {
       name, email, company,
-      platforms, appCategory, appStage, features, complexity, backend,
-      timeline, budget, inspiration, description,
+      platforms, appCategory, appStage, features,
+      timeline, inspiration, description,
     } = body ?? {};
 
     if (!name || !email || !description) {
@@ -30,10 +30,7 @@ export async function POST(req: Request) {
         { label: "App category", value: appCategory },
         { label: "Current stage", value: appStage },
         { label: "Features required", value: features },
-        { label: "Complexity", value: complexity },
-        { label: "Backend", value: backend },
         { label: "Timeline", value: timeline },
-        { label: "Budget", value: budget },
         { label: "Inspiration", value: inspiration },
       ],
       description,
