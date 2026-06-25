@@ -130,11 +130,11 @@ export function ContactForm() {
         </div>
       )}
 
-      <div className="flex items-center justify-between gap-4 pt-2">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
         <p className="text-[13px] text-[var(--muted)]">
-          Or email us: <a href="mailto:hello@abidemediagroup.com.au" className="underline underline-offset-4 text-[var(--ink)]">hello@abidemediagroup.com.au</a>
+          Or email us: <a href="mailto:hello@abidemediagroup.com.au" className="underline underline-offset-4 text-[var(--ink)] break-all">hello@abidemediagroup.com.au</a>
         </p>
-        <button type="submit" disabled={loading} className="btn btn-primary">
+        <button type="submit" disabled={loading} className="btn btn-primary w-full sm:w-auto justify-center shrink-0">
           {loading ? "Sending..." : "Send message →"}
         </button>
       </div>

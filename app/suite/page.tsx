@@ -76,7 +76,7 @@ export default function SuitePage() {
               </div>
 
               <div className="md:col-span-7">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="suite-feature-grid grid grid-cols-2 gap-3">
                   {[
                     { eye: "Team", title: "Rostering", desc: "Drag & drop rosters, shift swaps, availability" },
                     { eye: "Team", title: "Timesheets", desc: "Auto-generated from clock in/out, export to payroll" },
