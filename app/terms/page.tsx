@@ -1,91 +1,99 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Abide Media Group",
-}
+  title: "Terms of Use",
+  description:
+    "The terms governing your use of the Abide Media Group website and products, and how our website and app engagements work.",
+  alternates: { canonical: "https://abidemediagroup.com.au/terms" },
+};
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#F7F5F1] text-[#1A1A2E]">
-      <nav className="px-6 md:px-14 py-5 flex items-center justify-between border-b border-[#E2DDD6]">
-        <Link href="/" className="flex items-center gap-3">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="8" fill="#1A1A2E" />
-            <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
-          </svg>
-          <span className="text-[1rem] font-bold tracking-tight text-[#1A1A2E]">Abide Media Group</span>
-        </Link>
-      </nav>
+    <section className="relative overflow-hidden">
+      <div className="w-full max-w-[760px] mx-auto px-7 pt-20 pb-24">
+        <span className="eyebrow">Legal</span>
+        <h1
+          className="display mt-3"
+          style={{ fontWeight: 700, fontSize: "clamp(2.4rem,5vw,3.4rem)", lineHeight: 1.04, letterSpacing: "-.025em" }}
+        >
+          Terms of Use
+        </h1>
+        <p className="mt-3" style={{ color: "var(--muted)", fontFamily: "var(--mono)", fontSize: ".82rem" }}>
+          Last updated: June 2026
+        </p>
 
-      <article className="px-6 md:px-14 py-16 max-w-[740px] mx-auto">
-        <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#888070] mb-4">Legal</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Terms of Use</h1>
-        <p className="text-sm text-[#888070] mb-12">Last updated: April 2025</p>
+        <div className="legal mt-10">
+          <h2>1. About these terms</h2>
+          <p>
+            These terms govern your use of the Abide Media Group website (abidemediagroup.com.au), operated by Abide Media Group
+            Pty Ltd (ABN 95 696 579 683), and our products, including <a href="https://shiftbreeze.com">Shiftbreeze</a>. By
+            accessing the website you agree to these terms. Each product, and any work we do for you, may also have its own terms
+            that apply in addition to these.
+          </p>
 
-        <div className="prose prose-sm max-w-none text-[#4A4540] leading-relaxed space-y-8">
+          <h2>2. Use of this website</h2>
+          <p>This website is provided for information purposes. You may not:</p>
+          <ul>
+            <li>Use the website in any way that breaches applicable law</li>
+            <li>Attempt to gain unauthorised access to any part of our systems</li>
+            <li>Transmit any unsolicited or harmful content</li>
+            <li>Reproduce or redistribute our content without permission</li>
+          </ul>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">1. About these terms</h2>
-            <p>These terms govern your use of the Abide Media Group website (ABN 95 696 579 683) (abidemediagroup.com.au) and the products operated by Abide Media Group Pty Ltd, including Rundeck and CreatorLink. By accessing any of these services you agree to these terms. Each product may also have its own terms that apply in addition to these.</p>
-          </section>
+          <h2>3. Enquiries and engagements</h2>
+          <p>
+            Information on this site — including pages about our website and app services — is general and not an offer, quote or
+            binding agreement. Any work we take on is governed by a separate written proposal or agreement covering scope,
+            timeline, pricing and deliverables. Submitting a brief or enquiry doesn&apos;t create a contract until we both agree
+            those terms in writing.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">2. Use of this website</h2>
-            <p>This website is provided for information purposes only. You may not:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Use the website in any way that breaches applicable law</li>
-              <li>Attempt to gain unauthorised access to any part of our systems</li>
-              <li>Transmit any unsolicited or harmful content</li>
-              <li>Reproduce or redistribute our content without permission</li>
-            </ul>
-          </section>
+          <h2>4. Intellectual property</h2>
+          <p>
+            All content on this website — including text, graphics, logos and software — is the property of Abide Media Group Pty
+            Ltd or its licensors. Nothing on this site grants you any licence to use our intellectual property without written
+            permission.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">3. Intellectual property</h2>
-            <p>All content on this website — including text, graphics, logos, and software — is the property of Abide Media Group Pty Ltd or its licensors. Nothing on this site grants you any licence to use our intellectual property without written permission.</p>
-          </section>
+          <h2>5. Disclaimer of warranties</h2>
+          <p>
+            This website and its content are provided &quot;as is&quot; without warranty of any kind. We don&apos;t guarantee the
+            website will be uninterrupted, error-free, or free from harmful components. To the maximum extent permitted by
+            Australian law, we disclaim all warranties, express or implied. Nothing in these terms excludes rights you have under
+            the Australian Consumer Law that cannot lawfully be excluded.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">4. Disclaimer of warranties</h2>
-            <p>This website and its content are provided "as is" without any warranty of any kind. We do not guarantee that the website will be uninterrupted, error-free, or free from viruses or other harmful components. To the maximum extent permitted by Australian law, we disclaim all warranties, express or implied.</p>
-          </section>
+          <h2>6. Limitation of liability</h2>
+          <p>
+            To the extent permitted by law, Abide Media Group Pty Ltd will not be liable for any indirect, incidental, special or
+            consequential loss arising from your use of this website. Our liability for any claim is limited to AUD $100 or the
+            amount you paid us in the 12 months before the claim, whichever is greater.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">5. Limitation of liability</h2>
-            <p>To the extent permitted by law, Abide Media Group Pty Ltd will not be liable for any indirect, incidental, special, or consequential loss arising from your use of this website. Our liability for any claim is limited to the amount you paid us in the 12 months preceding the claim, or AUD $100 — whichever is greater.</p>
-          </section>
+          <h2>7. Third-party links</h2>
+          <p>
+            This website may link to third-party websites. We don&apos;t endorse or control those sites and aren&apos;t
+            responsible for their content or practices.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">6. Third-party links</h2>
-            <p>This website may link to third-party websites. We do not endorse or control those sites and are not responsible for their content or practices.</p>
-          </section>
+          <h2>8. Governing law</h2>
+          <p>
+            These terms are governed by the laws of New South Wales, Australia. You agree to submit to the non-exclusive
+            jurisdiction of the courts of New South Wales.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">7. Governing law</h2>
-            <p>These terms are governed by the laws of New South Wales, Australia. You agree to submit to the non-exclusive jurisdiction of the courts of New South Wales.</p>
-          </section>
+          <h2>9. Changes to these terms</h2>
+          <p>
+            We may update these terms from time to time. Continued use of this website after changes are posted means you accept
+            the revised terms.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">8. Changes to these terms</h2>
-            <p>We may update these terms from time to time. Continued use of this website after changes are posted constitutes your acceptance of the revised terms.</p>
-          </section>
-
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">9. Contact</h2>
-            <p>Questions about these terms? Email us at <a href="mailto:hello@abidemediagroup.com.au" className="underline hover:text-[#1A1A2E]">hello@abidemediagroup.com.au</a>.</p>
-          </section>
-
+          <h2>10. Contact</h2>
+          <p>
+            Questions about these terms? Email <a href="mailto:hello@abidemediagroup.com.au">hello@abidemediagroup.com.au</a>.
+          </p>
         </div>
-      </article>
-
-      <footer className="px-6 md:px-14 py-8 border-t border-[#E2DDD6] text-xs text-[#AAA090] flex flex-col sm:flex-row justify-between gap-3">
-        <span>© {new Date().getFullYear()} Abide Media Group Pty Ltd.</span>
-        <div className="flex gap-5">
-          <Link href="/privacy" className="hover:text-[#1A1A2E] transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-[#1A1A2E] transition-colors">Terms of Use</Link>
-        </div>
-      </footer>
-    </main>
-  )
+      </div>
+    </section>
+  );
 }

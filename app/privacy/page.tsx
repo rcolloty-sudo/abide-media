@@ -1,94 +1,101 @@
-import type { Metadata } from "next"
-import Link from "next/link"
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Abide Media Group",
-}
+  title: "Privacy Policy",
+  description:
+    "How Abide Media Group collects, uses and protects your personal information, in line with the Australian Privacy Act 1988 and the Australian Privacy Principles.",
+  alternates: { canonical: "https://abidemediagroup.com.au/privacy" },
+};
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#F7F5F1] text-[#1A1A2E]">
-      <nav className="px-6 md:px-14 py-5 flex items-center justify-between border-b border-[#E2DDD6]">
-        <Link href="/" className="flex items-center gap-3">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="8" fill="#1A1A2E" />
-            <path d="M7 23L12.5 10H14.5L16 14.2L17.5 10H19.5L25 23H22.8L21.4 19.4H17.8L19 16.4L16 9.2L13 16.4L14.2 19.4H10.6L9.2 23H7Z" fill="white" />
-          </svg>
-          <span className="text-[1rem] font-bold tracking-tight text-[#1A1A2E]">Abide Media Group</span>
-        </Link>
-      </nav>
+    <section className="relative overflow-hidden">
+      <div className="w-full max-w-[760px] mx-auto px-7 pt-20 pb-24">
+        <span className="eyebrow">Legal</span>
+        <h1
+          className="display mt-3"
+          style={{ fontWeight: 700, fontSize: "clamp(2.4rem,5vw,3.4rem)", lineHeight: 1.04, letterSpacing: "-.025em" }}
+        >
+          Privacy Policy
+        </h1>
+        <p className="mt-3" style={{ color: "var(--muted)", fontFamily: "var(--mono)", fontSize: ".82rem" }}>
+          Last updated: June 2026
+        </p>
 
-      <article className="px-6 md:px-14 py-16 max-w-[740px] mx-auto">
-        <p className="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-[#888070] mb-4">Legal</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-sm text-[#888070] mb-12">Last updated: April 2025</p>
+        <div className="legal mt-10">
+          <h2>1. Who we are</h2>
+          <p>
+            Abide Media Group Pty Ltd (ABN 95 696 579 683) (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is an Australian
+            software studio. We operate our own product, <a href="https://shiftbreeze.com">Shiftbreeze</a>, design and build
+            websites and apps for clients, and run this website at abidemediagroup.com.au. This policy explains how we collect,
+            use and protect your personal information in line with the Australian Privacy Act 1988 (Cth) and the Australian
+            Privacy Principles (APPs).
+          </p>
 
-        <div className="prose prose-sm max-w-none text-[#4A4540] leading-relaxed space-y-8">
+          <h2>2. Information we collect</h2>
+          <p>We may collect the following when you contact us, submit a project brief, or use our products:</p>
+          <ul>
+            <li>Name and email address</li>
+            <li>Business name and the project details you choose to share in our forms</li>
+            <li>Business name and ABN, where relevant for billing</li>
+            <li>Anonymised usage data from our products</li>
+            <li>Device and browser information for support and security</li>
+          </ul>
+          <p>We don&apos;t collect sensitive information unless you choose to provide it and it is necessary for our services.</p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">1. Who we are</h2>
-            <p>Abide Media Group Pty Ltd (ABN 95 696 579 683) ("we", "us", "our") is an Australian software company. We operate Rundeck (<a href="https://rundeck.com.au" className="underline hover:text-[#1A1A2E]">rundeck.com.au</a>) and CreatorLink, as well as this website at abidemediagroup.com.au. This policy explains how we collect, use, and protect your personal information in accordance with the Australian Privacy Act 1988 and the Australian Privacy Principles (APPs).</p>
-          </section>
+          <h2>3. How we use your information</h2>
+          <p>We use your information to:</p>
+          <ul>
+            <li>Respond to enquiries, briefs and support requests</li>
+            <li>Provide, maintain and improve our products and services</li>
+            <li>Send occasional updates you can opt out of at any time</li>
+            <li>Meet our legal obligations</li>
+          </ul>
+          <p>We don&apos;t sell, rent or trade your personal information.</p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">2. Information we collect</h2>
-            <p>We may collect the following information when you contact us or use our products:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Name and email address (when you contact us or sign up)</li>
-              <li>Business name and ABN (for billing purposes)</li>
-              <li>Usage data from our products (anonymised analytics)</li>
-              <li>Device and browser information for technical support</li>
-            </ul>
-            <p className="mt-3">We do not collect sensitive information unless you explicitly provide it and it is necessary for our services.</p>
-          </section>
+          <h2>4. How our forms and email work</h2>
+          <p>
+            When you submit a form on this site, the details are emailed to us (via Resend) and may be stored securely so we can
+            manage and respond to your enquiry. We use this information only to reply to you and to deliver the services you have
+            asked about.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">3. How we use your information</h2>
-            <p>We use your information to:</p>
-            <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Provide and improve our products and services</li>
-              <li>Respond to enquiries and support requests</li>
-              <li>Send product updates (you can unsubscribe at any time)</li>
-              <li>Meet our legal obligations</li>
-            </ul>
-            <p className="mt-3">We do not sell, rent, or trade your personal information to third parties.</p>
-          </section>
+          <h2>5. Third-party services</h2>
+          <p>
+            We rely on trusted providers including Resend (email delivery), Supabase (database hosting), Stripe (payments) and
+            Vercel (website hosting). Each handles data under its own privacy policy and applicable laws.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">4. Third-party services</h2>
-            <p>Our products use third-party services including Supabase (database hosting), Stripe (payments), Resend (email), and Vercel (hosting). These services have their own privacy policies and handle data in accordance with applicable laws.</p>
-          </section>
+          <h2>6. Data storage and security</h2>
+          <p>
+            Your data is stored on servers in Australia and the United States via our infrastructure providers. We take
+            reasonable steps to protect it from misuse, loss and unauthorised access.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">5. Data storage and security</h2>
-            <p>Your data is stored on servers located in Australia and the United States (via our infrastructure providers). We take reasonable steps to protect your information from misuse, loss, and unauthorised access.</p>
-          </section>
+          <h2>7. Your rights</h2>
+          <p>
+            You can access, correct, or request deletion of your personal information at any time. Email{" "}
+            <a href="mailto:hello@abidemediagroup.com.au">hello@abidemediagroup.com.au</a> and we&apos;ll respond within 30 days.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">6. Your rights</h2>
-            <p>You have the right to access, correct, or request deletion of your personal information. To exercise these rights, contact us at <a href="mailto:hello@abidemediagroup.com.au" className="underline hover:text-[#1A1A2E]">hello@abidemediagroup.com.au</a>. We will respond within 30 days.</p>
-          </section>
+          <h2>8. Cookies</h2>
+          <p>
+            This website doesn&apos;t use tracking or advertising cookies. Our products may use essential session cookies needed
+            for sign-in — never for cross-site tracking.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">7. Cookies</h2>
-            <p>This website does not use tracking cookies. Our products may use session cookies necessary for authentication — these are not used for advertising or cross-site tracking.</p>
-          </section>
+          <h2>9. Changes to this policy</h2>
+          <p>
+            We may update this policy from time to time. The current version will always be on this page, with its
+            &quot;last updated&quot; date.
+          </p>
 
-          <section>
-            <h2 className="text-lg font-bold text-[#1A1A2E] mb-3">8. Contact</h2>
-            <p>For privacy-related queries, contact us at <a href="mailto:hello@abidemediagroup.com.au" className="underline hover:text-[#1A1A2E]">hello@abidemediagroup.com.au</a>.</p>
-          </section>
-
+          <h2>10. Contact</h2>
+          <p>
+            For any privacy question, email <a href="mailto:hello@abidemediagroup.com.au">hello@abidemediagroup.com.au</a>.
+          </p>
         </div>
-      </article>
-
-      <footer className="px-6 md:px-14 py-8 border-t border-[#E2DDD6] text-xs text-[#AAA090] flex flex-col sm:flex-row justify-between gap-3">
-        <span>© {new Date().getFullYear()} Abide Media Group Pty Ltd.</span>
-        <div className="flex gap-5">
-          <Link href="/privacy" className="hover:text-[#1A1A2E] transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-[#1A1A2E] transition-colors">Terms of Use</Link>
-        </div>
-      </footer>
-    </main>
-  )
+      </div>
+    </section>
+  );
 }

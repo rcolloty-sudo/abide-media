@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
   const year = new Date().getFullYear();
   return (
     <footer style={{ background: "var(--ink-2)", color: "var(--paper)" }} className="pt-[72px] pb-9">
@@ -22,7 +26,7 @@ export function Footer() {
           <div className="flex gap-[72px] flex-wrap">
             <div>
               <h4 className="m-0 mb-4 font-semibold" style={{ fontFamily: "var(--mono)", fontSize: ".7rem", letterSpacing: ".16em", textTransform: "uppercase", color: "var(--mint)" }}>
-                Suite
+                Our suite
               </h4>
               <a href="https://shiftbreeze.com" target="_blank" rel="noopener noreferrer" className="block mb-3 text-[0.98rem]" style={{ color: "#C2D4CA" }}>
                 Shiftbreeze
@@ -56,6 +60,8 @@ export function Footer() {
             <Link href="/privacy" style={{ color: "#88A096" }}>Privacy Policy</Link>
             &nbsp;·&nbsp;
             <Link href="/terms" style={{ color: "#88A096" }}>Terms of Use</Link>
+            &nbsp;·&nbsp;
+            <Link href="/accessibility" style={{ color: "#88A096" }}>Accessibility</Link>
           </span>
         </div>
       </div>

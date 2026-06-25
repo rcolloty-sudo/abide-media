@@ -51,6 +51,19 @@ img, svg { display: block; max-width: 100% }
   color: var(--pine);
 }
 
+/* ───── legal / long-form prose ───── */
+.legal { color: var(--muted); line-height: 1.7; font-size: 1.02rem; }
+.legal h2 {
+  font-family: var(--display); font-weight: 700; color: var(--ink);
+  font-size: 1.25rem; letter-spacing: -.01em; margin: 2.4rem 0 .6rem;
+}
+.legal p { margin: 0 0 1rem; }
+.legal ul { margin: .4rem 0 1.2rem; padding-left: 1.25rem; list-style: disc; }
+.legal li { margin: .35rem 0; }
+.legal a { color: var(--ink); border-bottom: 1px solid var(--ember); }
+.legal a:hover { color: var(--ember-deep); }
+.legal strong { color: var(--ink); font-weight: 600; }
+
 /* ───── buttons ───── */
 .btn {
   display: inline-flex; align-items: center; gap: .55em;

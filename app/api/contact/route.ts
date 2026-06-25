@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendEmail, buildEmail } from "../../lib/sendEmail";
+import { saveEnquiry } from "../../lib/saveEnquiry";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,14 @@ export async function POST(req: Request) {
       subject: `Contact: ${topic || "General enquiry"} — ${name}`,
       html,
       replyTo: email,
+    });
+
+    await saveEnquiry({
+      type: "contact",
+      name,
+      email,
+      topic: topic || undefined,
+      payload: { topic: topic || "", message },
     });
 
     return NextResponse.json({ success: true });

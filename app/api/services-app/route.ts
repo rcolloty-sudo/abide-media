@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendEmail, buildEmail } from "../../lib/sendEmail";
+import { saveEnquiry } from "../../lib/saveEnquiry";
 
 export const dynamic = "force-dynamic";
 
@@ -40,6 +41,14 @@ export async function POST(req: Request) {
       subject: `App brief — ${name}${company ? ` (${company})` : ""}`,
       html,
       replyTo: email,
+    });
+
+    await saveEnquiry({
+      type: "app_brief",
+      name,
+      email,
+      business: company,
+      payload: { platforms, appCategory, appStage, features, timeline, inspiration, description },
     });
 
     return NextResponse.json({ success: true });

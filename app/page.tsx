@@ -37,8 +37,8 @@ export default function Home() {
               maxWidth: 900,
             }}
           >
-            We build tools that help businesses{" "}
-            <span style={{ color: "var(--ember)", whiteSpace: "nowrap" }}>run better.</span>
+            We design and build the websites and apps your business{" "}
+            <span style={{ color: "var(--ember)", whiteSpace: "nowrap" }}>runs on.</span>
           </h1>
 
           <p
@@ -49,16 +49,15 @@ export default function Home() {
               maxWidth: 620,
             }}
           >
-            Abide Media Group is an Australian software studio. We build our own products — like{" "}
-            <strong style={{ color: "var(--ink)", fontWeight: 600 }}>Shiftbreeze</strong> — and we design websites and apps for the businesses who&apos;d rather have us build theirs.
+            Abide Media Group is an Australian software studio. We design and build websites, online stores and mobile apps for businesses — start to finish, by the people who&apos;ll actually build them.
           </p>
 
           <div className="flex gap-3.5 flex-wrap mb-10">
-            <Link href="/suite" className="btn btn-primary">
-              See our suite <span className="arr" aria-hidden="true">→</span>
+            <Link href="/services" className="btn btn-primary">
+              Build with us <span className="arr" aria-hidden="true">→</span>
             </Link>
-            <Link href="/services" className="btn btn-ghost">
-              Build with us
+            <Link href="/suite" className="btn btn-ghost">
+              See what we&apos;ve built
             </Link>
           </div>
 
@@ -85,10 +84,10 @@ export default function Home() {
                 margin: ".4em 0 .35em",
               }}
             >
-              One product live. More on the way.
+              Apps we built to help businesses run better.
             </h2>
             <p className="text-[1.08rem]" style={{ color: "var(--muted)", margin: 0, maxWidth: 560 }}>
-              Every tool we make is built for the operator on the floor — not the buyer in a boardroom. Focused, well-made, and priced like we&apos;d want to pay for it ourselves.
+              We don&apos;t just build for clients — we build and run our own. Shiftbreeze is one we made from the ground up: the same standard of work we bring to every website and app we take on.
             </p>
           </div>
 

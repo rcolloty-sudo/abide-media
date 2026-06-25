@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 const NAV_LINKS = [
-  { href: "/suite", label: "Suite" },
+  { href: "/suite", label: "Our suite" },
   { href: "/services", label: "Build with us" },
   { href: "/about", label: "About" },
 ];
@@ -21,6 +21,9 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // The admin portal has its own chrome — hide the marketing nav there.
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <header
