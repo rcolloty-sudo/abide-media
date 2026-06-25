@@ -41,6 +41,7 @@ export function Footer() {
               </h4>
               <Link href="/services/website" className="block mb-3 text-[0.98rem]" style={{ color: "#C2D4CA" }}>Website design</Link>
               <Link href="/services/app" className="block mb-3 text-[0.98rem]" style={{ color: "#C2D4CA" }}>App design</Link>
+              <Link href="/work" className="block mb-3 text-[0.98rem]" style={{ color: "#C2D4CA" }}>Our work</Link>
               <Link href="/about" className="block mb-3 text-[0.98rem]" style={{ color: "#C2D4CA" }}>About us</Link>
             </div>
             <div>
