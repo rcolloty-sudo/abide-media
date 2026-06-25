@@ -110,7 +110,7 @@ export default function Home() {
                   width: 320,
                   height: 320,
                   borderRadius: "50%",
-                  background: "radial-gradient(circle at 40% 40%, rgba(143,211,176,.4), transparent 68%)",
+                  background: "radial-gradient(circle at 40% 40%, rgba(30,123,240,.32), transparent 68%)",
                   pointerEvents: "none",
                 }}
               />
@@ -121,16 +121,18 @@ export default function Home() {
                       width: 52,
                       height: 52,
                       borderRadius: 14,
-                      background: "linear-gradient(150deg, var(--pine), var(--ink))",
-                      color: "var(--mint)",
+                      background: "#1E7BF0",
                       display: "grid",
                       placeItems: "center",
-                      fontFamily: "var(--display)",
-                      fontWeight: 800,
-                      fontSize: "1.5rem",
+                      flex: "0 0 auto",
                     }}
+                    aria-hidden="true"
                   >
-                    S
+                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
+                      <path d="M 14 22 Q 24 16 34 22 T 50 22" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                      <path d="M 12 33 Q 22 27 32 33 T 46 33" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                      <path d="M 17 44 Q 25 40 33 44" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                    </svg>
                   </div>
                   <div>
                     <div className="display" style={{ fontWeight: 700, fontSize: "1.5rem", letterSpacing: "-.01em" }}>
