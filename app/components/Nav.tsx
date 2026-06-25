@@ -61,6 +61,15 @@ export function Nav() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <Link
+            href="/admin"
+            className="font-medium text-[0.97rem] transition-colors"
+            style={{ color: "var(--muted)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+          >
+            Log in
+          </Link>
           <Link href="/contact" className="btn btn-ghost">
             Contact
           </Link>
@@ -99,6 +108,14 @@ export function Nav() {
                 </Link>
               );
             })}
+            <Link
+              href="/admin"
+              onClick={() => setOpen(false)}
+              className="text-[17px] font-medium py-3"
+              style={{ color: "var(--muted)" }}
+            >
+              Log in
+            </Link>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
