@@ -44,13 +44,16 @@ export default function SuitePage() {
                   <div
                     style={{
                       width: 60, height: 60, borderRadius: 16,
-                      background: "linear-gradient(150deg, var(--pine), var(--ink))",
-                      color: "var(--mint)",
-                      display: "grid", placeItems: "center",
-                      fontFamily: "var(--display)", fontWeight: 800, fontSize: "1.7rem",
+                      background: "#1E7BF0",
+                      display: "grid", placeItems: "center", flex: "0 0 auto",
                     }}
+                    aria-hidden="true"
                   >
-                    S
+                    <svg width="37" height="37" viewBox="0 0 64 64" fill="none">
+                      <path d="M 14 22 Q 24 16 34 22 T 50 22" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                      <path d="M 12 33 Q 22 27 32 33 T 46 33" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                      <path d="M 17 44 Q 25 40 33 44" stroke="#fff" strokeWidth="4" strokeLinecap="round" />
+                    </svg>
                   </div>
                   <span className="status status--live"><span className="dot"></span>Live · Available now</span>
                 </div>
