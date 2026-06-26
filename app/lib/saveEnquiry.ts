@@ -12,11 +12,11 @@ export async function saveEnquiry(input: {
   business?: string;
   topic?: string;
   payload?: Record<string, unknown>;
-}) {
+}): Promise<boolean> {
   const admin = supabaseAdmin();
-  if (!admin) return;
+  if (!admin) return false;
   try {
-    await admin.from("enquiries").insert({
+    const { error } = await admin.from("enquiries").insert({
       type: input.type,
       name: input.name ?? null,
       email: input.email ?? null,
@@ -24,7 +24,13 @@ export async function saveEnquiry(input: {
       topic: input.topic ?? null,
       payload: input.payload ?? {},
     });
+    if (error) {
+      console.error("saveEnquiry insert error:", error);
+      return false;
+    }
+    return true;
   } catch (err) {
     console.error("saveEnquiry failed:", err);
+    return false;
   }
 }

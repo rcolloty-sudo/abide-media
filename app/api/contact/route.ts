@@ -27,19 +27,32 @@ export async function POST(req: Request) {
       description: message,
     });
 
-    await sendEmail({
-      subject: `Contact: ${topic || "General enquiry"} — ${name}`,
-      html,
-      replyTo: email,
-    });
-
-    await saveEnquiry({
+    const saved = await saveEnquiry({
       type: "contact",
       name,
       email,
       topic: topic || undefined,
       payload: { topic: topic || "", message },
     });
+
+    let emailed = false;
+    try {
+      await sendEmail({
+        subject: `Contact: ${topic || "General enquiry"} — ${name}`,
+        html,
+        replyTo: email,
+      });
+      emailed = true;
+    } catch (e) {
+      console.error("Contact email skipped:", e);
+    }
+
+    if (!saved && !emailed) {
+      return NextResponse.json(
+        { error: "Couldn't save your message right now. Please email us directly." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (err: any) {

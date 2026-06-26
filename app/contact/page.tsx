@@ -45,8 +45,8 @@ export default function ContactPage() {
                 <span className="eyebrow">Email us directly</span>
                 <a
                   href="mailto:hello@abidemediagroup.com.au"
-                  className="display block mt-3 break-all transition-colors hover:text-[var(--ember)]"
-                  style={{ fontWeight: 700, fontSize: "1.45rem", lineHeight: 1.2, color: "var(--ink)" }}
+                  className="display block mt-3 transition-colors hover:text-[var(--ember)]"
+                  style={{ fontWeight: 700, fontSize: "clamp(0.9rem, 1.7vw, 1.2rem)", lineHeight: 1.2, color: "var(--ink)", whiteSpace: "nowrap" }}
                 >
                   hello@abidemediagroup.com.au
                 </a>

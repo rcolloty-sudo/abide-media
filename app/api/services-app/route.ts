@@ -37,19 +37,32 @@ export async function POST(req: Request) {
       description,
     });
 
-    await sendEmail({
-      subject: `App brief — ${name}${company ? ` (${company})` : ""}`,
-      html,
-      replyTo: email,
-    });
-
-    await saveEnquiry({
+    const saved = await saveEnquiry({
       type: "app_brief",
       name,
       email,
       business: company,
       payload: { platforms, appCategory, appStage, features, timeline, inspiration, description },
     });
+
+    let emailed = false;
+    try {
+      await sendEmail({
+        subject: `App brief — ${name}${company ? ` (${company})` : ""}`,
+        html,
+        replyTo: email,
+      });
+      emailed = true;
+    } catch (e) {
+      console.error("App brief email skipped:", e);
+    }
+
+    if (!saved && !emailed) {
+      return NextResponse.json(
+        { error: "Couldn't save your brief right now. Please email us directly." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (err: any) {
