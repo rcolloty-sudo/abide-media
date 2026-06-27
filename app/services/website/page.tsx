@@ -3,15 +3,35 @@ import { Breeze } from "../../components/Breeze";
 import { WebsiteForm } from "./form";
 
 export const metadata: Metadata = {
-  title: "Website design brief",
+  title: "Website design & development brief",
   description:
-    "Tell us about your website project. We'll come back to you within 2 business days with a scope, timeline, and quote.",
+    "Tell us about your website project. Our Australian studio designs and builds fast, modern sites — we'll reply within 2 business days with scope, timeline and a quote.",
   alternates: { canonical: "https://abidemediagroup.com.au/services/website" },
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Website design and development",
+  name: "Website design & development",
+  description:
+    "Custom website design and development for Australian businesses — marketing sites, online stores and booking flows, built fast and made to convert.",
+  provider: {
+    "@type": "Organization",
+    name: "Abide Media Group",
+    url: "https://abidemediagroup.com.au",
+  },
+  areaServed: "AU",
+  url: "https://abidemediagroup.com.au/services/website",
 };
 
 export default function WebsiteServicePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="relative overflow-hidden pt-20 pb-12">
         <Breeze />
         <div className="relative z-[1] w-full max-w-[1180px] mx-auto px-7">

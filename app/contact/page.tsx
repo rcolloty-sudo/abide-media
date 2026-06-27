@@ -4,9 +4,9 @@ import { Breeze } from "../components/Breeze";
 import { ContactForm } from "./form";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact our Australian software studio",
   description:
-    "Get in touch with Abide Media Group. For project enquiries, partnership ideas, or just to say hi — we'd love to hear from you.",
+    "Get in touch with Abide Media Group. For website and app project enquiries, partnership ideas, or just to say hi — we'd love to hear from you.",
   alternates: { canonical: "https://abidemediagroup.com.au/contact" },
 };
 

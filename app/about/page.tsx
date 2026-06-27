@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Breeze } from "../components/Breeze";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About our Australian software studio",
   description:
     "Abide Media Group is a small Australian software studio. We build focused, well-made tools and design websites and apps for businesses we believe in.",
   alternates: { canonical: "https://abidemediagroup.com.au/about" },

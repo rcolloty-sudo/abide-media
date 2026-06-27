@@ -3,15 +3,35 @@ import { Breeze } from "../../components/Breeze";
 import { AppForm } from "./form";
 
 export const metadata: Metadata = {
-  title: "App design brief",
+  title: "Mobile app design & development brief",
   description:
-    "Tell us about your mobile app project. We'll come back to you within 2 business days with a scope, timeline, and quote.",
+    "Tell us about your mobile app project. Our Australian studio builds iOS and Android apps end to end — we'll reply within 2 business days with scope, timeline and a quote.",
   alternates: { canonical: "https://abidemediagroup.com.au/services/app" },
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Mobile app design and development",
+  name: "Mobile app design & development",
+  description:
+    "iOS and Android app design and development for Australian businesses — product design, build and launch, handled end to end.",
+  provider: {
+    "@type": "Organization",
+    name: "Abide Media Group",
+    url: "https://abidemediagroup.com.au",
+  },
+  areaServed: "AU",
+  url: "https://abidemediagroup.com.au/services/app",
 };
 
 export default function AppServicePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <section className="relative overflow-hidden pt-20 pb-12">
         <Breeze />
         <div className="relative z-[1] w-full max-w-[1180px] mx-auto px-7">

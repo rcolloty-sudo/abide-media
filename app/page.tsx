@@ -1,5 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { Breeze } from "./components/Breeze";
+
+export const metadata: Metadata = {
+  title: "Australian software studio — web & app development",
+  description:
+    "Abide Media Group is an Australian software studio. We design and build websites and mobile apps end to end, and make our own product, Shiftbreeze.",
+  alternates: { canonical: "https://abidemediagroup.com.au" },
+};
 
 export default function Home() {
   return (
